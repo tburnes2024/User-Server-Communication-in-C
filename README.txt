@@ -8,8 +8,8 @@ to parent, and every pipe except the childs read pipe for parent to child. In th
 ends for child to parent. After this I put the child processes into an infinite loop to wait for a signal from the parent process that it is ready to read, 
 the parent process calls the server_handler function. After the user processes break out of the infinite loop they each then call the user_handler function.
 
-****Please note the use of the SA_RESTART flag when initializing my sigaction structs handles the case of interrupted read, This flag makes the default
-behavior when interrupted by a signal to restart the system call. I have error handling for all other situations in my code.******
+****Please note the use of the SA_RESTART flag when initializing my sigaction structs handles the case of interrupted read/write, This flag makes the default
+behavior when interrupted by a signal to restart the system call.******
 
 Functions:
 
